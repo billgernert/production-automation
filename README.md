@@ -6,7 +6,7 @@ These scripts ran in real environments, on schedules, with real stakes. They've 
 
 ## What's here
 
-- **[Horizon](HorizonMonitoringScript.ps1)** — a low-desktop, error-desktop and connection-server health monitor for a VMware/Omnissa Horizon VDI environment. Built over a weekend after getting a quote for a commercial monitoring product, it ran every 15 minutes and alerted on low desktop pools, error desktops, and unhealthy connection servers. It let me patch pools safely on a schedule and eliminated the need for a third-party solution.
+- **[Horizon VDI Monitor](horizon/HorizonMonitoringScript.ps1)** — a low-desktop, error-desktop and connection-server health monitor for a VMware/Omnissa Horizon VDI environment. Built over a weekend after getting a quote for a commercial monitoring product, it ran every 15 minutes and alerted on low desktop pools, error desktops, and unhealthy connection servers. It let me patch pools safely on a schedule and eliminated the need for a third-party solution.
 
 *More to come: a three-stage patching pipeline (test, validate, promote) and a scheduled IIS farm deployment tool that ran change windows without me at my desk.*
 
