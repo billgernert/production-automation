@@ -10,7 +10,7 @@ These scripts ran in real environments, on schedules, with real stakes. They've 
 
 - **[Horizon 3-Phase Patching](horizon/HorizonPatchingJenkins.ps1)** — the companion to the monitor. Driven by Jenkins parameters, it runs the full VDI patch cycle in three phases: snapshot the gold images and push to test, validate, then promote the tested image to production with scheduled maintenance windows. Includes a failsafe that aborts the run if any gold image is powered on, since snapshotting a running parent image corrupts it. This automation handled five gold images across many pools every patch cycle.
 
-*More to come: a scheduled IIS farm deployment tool that ran change windows without me at my desk.*
+- **[IIS Farm Rolling Deployment](IIS/IISFarmDeployment.ps1)** — deploys application code to a load-balanced IIS farm with zero downtime, and without anyone sitting at a desk during the change window. Driven by Jenkins parameters, it updates the front-end and back-end (API) servers one at a time so a healthy server always serves traffic. Backs up and zips current code before each deploy, puts hosts into monitoring maintenance so expected restarts don't alarm, and includes a stubborn-file failsafe that mirrors an empty directory over a locked target when a normal delete fails. It emails the app team from the runner's own address when finished.
 
 ## A note on these scripts
 
